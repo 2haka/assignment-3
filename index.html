@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3 Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="light">
+  <header class="topbar">
+    <div class="logo">My Portfolio</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#api">Live GitHub Feed</a>
+      <a href="#contact">Contact</a>
+      <a href="#docs">Docs</a>
+    </nav>
+    <button id="themeToggle" class="secondary" aria-label="Toggle theme">Toggle theme</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Assignment 3 - Advanced Functionality</p>
+        <h1>Dynamic portfolio with live data and smart UI.</h1>
+        <p class="lede">API-driven sections, stateful controls, real-time metrics, and validation layered into a bold single-page layout.</p>
+        <div class="greeting">
+          <label for="nameInput">Add your name to personalize the greeting:</label>
+          <div class="input-row">
+            <input id="nameInput" type="text" placeholder="Your name">
+            <button id="saveName">Save</button>
+          </div>
+          <p id="greetingText" class="muted"></p>
+        </div>
+        <div class="timer">
+          <span>Time on site:</span>
+          <strong id="sessionTimer">0s</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Project Explorer</p>
+          <h2>Filter and sort portfolio items</h2>
+        </div>
+        <div class="controls">
+          <div class="filter-group" role="group" aria-label="Category filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="data">Data</button>
+          </div>
+          <label class="select-label">
+            Sort by:
+            <select id="sortSelect">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="az">A - Z</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div id="projectGrid" class="grid"></div>
+      <p id="projectStatus" class="muted"></p>
+    </section>
+
+    <section id="api" class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">API Integration</p>
+          <h2>Latest GitHub repositories</h2>
+        </div>
+        <div class="input-row">
+          <input id="githubUser" type="text" placeholder="GitHub username" value="octocat">
+          <button id="loadRepos">Refresh</button>
+        </div>
+      </div>
+      <div id="repoGrid" class="grid"></div>
+      <p id="repoStatus" class="muted"></p>
+    </section>
+
+    <section id="contact" class="panel two-col">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Send a quick message</h2>
+      <p class="muted">Form validates empties, email pattern, and message length before allowing submission.</p>
+      </div>
+      <form id="contactForm" novalidate>
+        <label>
+          Name
+          <input name="name" type="text" required placeholder="Jane Doe">
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" required placeholder="you@example.com">
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required placeholder="Tell me about your project"></textarea>
+        </label>
+        <div class="helper muted" id="contactHelper"></div>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Built for Assignment 3 - Demonstrating advanced functionality and API integration.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
